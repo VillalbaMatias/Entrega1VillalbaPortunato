@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block Home %}
+
+
+<form action="" method="get">
+
+    <input type="text" name="apellido" id="apellido">
+
+    <input type="submit" value="Buscar">
+
+</form>
+
+{% if profesores %}
+    
+    {% for profesor in profesores %}
+    <ul>
+        <li>Nombre: {{profesor.nombre}}</li>
+        <li>Apellido: {{profesor.apellido}}</li>
+        <li>email: {{profesor.email}}</li>
+        <li>DNI: {{profesor.dni}}</li>
+        <li>Profesion: {{profesor.Profesion}}</li>
+    </ul>
+    {% endfor %}
+{% else %}
+    <p>No hay datos</p>
+
+{% endif %}
+
+{% endblock %}
+

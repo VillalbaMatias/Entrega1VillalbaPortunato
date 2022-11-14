@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block formularioDinamico %}
+
+
+<form action="" method="post">{% csrf_token %}
+
+
+    <h3>Formulario para crear un Profesor</h3>
+
+    <table>
+        {{formulario.as_table}}
+    </table>
+
+    <button type="submit" value="Enviar">Enviar</button>
+    
+</form>
+{% endblock %}

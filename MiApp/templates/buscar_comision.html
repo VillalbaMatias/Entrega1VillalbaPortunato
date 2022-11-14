@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block Home %}
+
+
+<form action="" method="get">
+
+    <input type="text" name="comision" id="comision">
+
+    <input type="submit" value="Buscar">
+
+</form>
+
+{% if cursos %}
+    {% for curso in cursos %}
+    <ul>
+        <li>Nombre: {{curso.nombre}}</li>
+        <li>Comision: {{curso.comision}}</li>
+    </ul>
+    {% endfor %}
+{% else %}
+    <p>No hay datos</p>
+
+{% endif %}
+
+{% endblock %}
